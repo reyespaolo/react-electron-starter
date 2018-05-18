@@ -1,0 +1,54 @@
+{
+  "name": "react-electron-starter",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "npm-run-all": "^4.1.3",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-scripts": "1.0.17",
+    "rimraf": "^2.6.2"
+  },
+  "devDependencies": {
+    "electron": "^1.7.10",
+    "electron-builder": "^19.52.1",
+    "foreman": "^2.0.0"
+  },
+  "scripts": {
+    "dev": "nf start",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "electron": "electron .",
+    "ebuild": "yarn private:clean build && node_modules/.bin/build",
+    "pack:mac": "yarn run-s private:clean build private:build:mac",
+    "pack:win": "yarn run-s private:clean build private:build:win",
+    "pack:linux": "yarn run-s private:clean build private:build:linux",
+    "pack:all": "yarn run-s private:clean build private:build:all",
+    "private:clean" : "yarn rimraf build",
+    "private:build:mac" : "electron-builder -m",
+    "private:build:win" : "electron-builder -w",
+    "private:build:linux" : "electron-builder -l",
+    "private:build:all" : "electron-builder -mwl"
+  },
+  "description": "React and Electron Awesome App",
+  "homepage": "./",
+  "main": "electron/main.js",
+  "build": {
+    "productName": "React Electron App",
+    "appId": "com.reactbits.reactelectron",
+    "electronVersion": "1.7.10",
+    "files": [
+      "build/**/*",
+      "electron/*"
+    ],
+    "mac": {
+      "category": "public.app-category.productivity"
+    },
+    "win": {},
+    "linux": {
+      "category": "Network"
+    }
+  }
+}
