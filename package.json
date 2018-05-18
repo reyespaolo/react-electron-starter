@@ -22,10 +22,10 @@
     "eject": "react-scripts eject",
     "electron": "electron .",
     "ebuild": "yarn private:clean build && node_modules/.bin/build",
-    "pack:mac": "yarn run-s private:clean build private:build:mac",
-    "pack:win": "yarn run-s private:clean build private:build:win",
-    "pack:linux": "yarn run-s private:clean build private:build:linux",
-    "pack:all": "yarn run-s private:clean build private:build:all",
+    "pack:mac": "yarn run-s build private:build:mac",
+    "pack:win": "yarn run-s build private:build:win",
+    "pack:linux": "yarn run-s build private:build:linux",
+    "pack:all": "yarn run-s build private:build:all",
     "private:clean" : "yarn rimraf build",
     "private:build:mac" : "electron-builder -m",
     "private:build:win" : "electron-builder -w",
@@ -39,6 +39,9 @@
     "productName": "React Electron App",
     "appId": "com.reactbits.reactelectron",
     "electronVersion": "1.7.10",
+    "directories": {
+      "buildResources": "."
+      },
     "files": [
       "build/**/*",
       "electron/*"
