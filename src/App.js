@@ -1,21 +1,35 @@
 import React, { Component } from 'react';
 import Radium, { StyleRoot } from 'radium';
-import classes from './App.css'
-import logo from './logo.svg';
+
+import 'primereact/resources/primereact.min.css';
+import 'font-awesome/css/font-awesome.css';
+import 'primereact/resources/themes/omega/theme.css';
 import './App.css';
 
+import {Button} from 'primereact/components/button/Button';
+
+import SampleComponent from './SampleComponent/SampleComponent';
+
+
+import logo from './logo.svg';
+
 class App extends Component {
+
+
   render() {
+
     return (
       <StyleRoot>
-        <div className={classes.App}>
-          <header className={classes.AppHeader}>
-            <img src={logo} className={classes.AppLogo} alt="logo" />
-            <h1 className={classes.AppTitle}>React Starter Project</h1>
+        <div className="App">
+          <header className="AppHeader">
+            <img src={logo} className="AppLogo" alt="logo" />
+            <h1 className="AppTitle">React with CSS Modules</h1>
           </header>
-          <p className={classes.AppIntro}>
+          <Button icon="fa-check" iconPos="right" label="Sample Button"/>
+          <p className="AppIntro">
             Hello i am a react component
           </p>
+          <SampleComponent />
         </div>
       </StyleRoot>
 
