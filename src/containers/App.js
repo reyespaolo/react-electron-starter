@@ -8,10 +8,10 @@ import './App.css';
 
 import {Button} from 'primereact/components/button/Button';
 
-import SampleComponent from './SampleComponent/SampleComponent';
+import SampleComponent from '../components/SampleComponent/SampleComponent';
 
 
-import logo from './logo.svg';
+import logo from '../assets/logo.svg';
 
 class App extends Component {
 

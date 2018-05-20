@@ -1,2 +1,2 @@
 react: yarn start
-electron: node electron-wait-react.js
+electron: node ./config/electron-wait-react.js
