@@ -1,16 +1,19 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 import {Button} from 'primereact/components/button/Button';
-
+import Aux from '../../hoc/Aux';
 //Functional Components
-const SampleComponent = () => {
+const sampleComponent = (props) => {
 
   return(
-    <div>
+    <Aux>
       <p>Sample Component</p>
-      <Button label="Button"/>
-
-    </div>
+      <Button  label={props.sampleProp}/>
+    </Aux>
   );
 }
 
-export default SampleComponent;
+sampleComponent.propTypes = {
+  sampleProp:PropTypes.string
+}
+export default sampleComponent;

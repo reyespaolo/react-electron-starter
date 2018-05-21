@@ -29,7 +29,7 @@ class App extends Component {
           <p className="AppIntro">
             Hello i am a react component
           </p>
-          <SampleComponent />
+          <SampleComponent sampleProp ="Test Prop"/>
         </div>
       </StyleRoot>
 
