@@ -24,6 +24,8 @@ class App extends Component {
               <ul className={classes.MenuBar}>
                 <li><NavLink exact activeStyle={{color:'#ffa500'}} className={classes.Menu} to="/">Home Route</NavLink></li>
                 <li><NavLink className={classes.Menu} activeStyle={{color:'#ffa500'}} to="/sample_route">Sample Route</NavLink></li>
+                <li><NavLink className={classes.Menu} activeStyle={{color:'#ffa500'}} to="/123">Sample Route with Params</NavLink></li>
+
               </ul>
             </nav>
           </div>

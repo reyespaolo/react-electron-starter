@@ -15,12 +15,13 @@ class sampleComponent extends Component{
   }
 
   render(){
-
+    console.log(this.props)
     return(
       <Aux>
-        <p>Sample Component</p>
+        <p>Home Compoenent</p>
         <input ref={this.inputElement}/>
-        <Button  label={this.props.sampleProp||'Button'}/>
+        <div>Params: {this.props.match.params.paramsId || "No Params"}</div>
+        <div><Button className="ui-button-warning" label={this.props.sampleProp||'Sample Button'}/></div>
       </Aux>
     );
   }
