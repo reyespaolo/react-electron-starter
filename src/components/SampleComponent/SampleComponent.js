@@ -15,11 +15,12 @@ class sampleComponent extends Component{
   }
 
   render(){
+
     return(
       <Aux>
         <p>Sample Component</p>
         <input ref={this.inputElement}/>
-        <Button  label={this.props.sampleProp}/>
+        <Button  label={this.props.sampleProp||'Button'}/>
       </Aux>
     );
   }
