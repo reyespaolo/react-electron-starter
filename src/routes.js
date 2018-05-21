@@ -12,7 +12,6 @@ const mainRoute =  (
         <Route exact path="/sample_route" component={SampleRoute}/>
         <Route exact path="/:paramsId" component={SampleComponent}/>
       </Switch>
-
     </div>
 );
 

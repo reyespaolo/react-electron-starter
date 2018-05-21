@@ -4,13 +4,16 @@ import { NavLink } from 'react-router-dom'
 import 'primereact/resources/primereact.min.css';
 import 'font-awesome/css/font-awesome.css';
 import 'primereact/resources/themes/cupertino/theme.css';
+import { withRouter } from "react-router-dom";
+
 import classes from './App.css';
 import {mainRoute} from '../routes'
-
-
 import logo from '../assets/logo.svg';
 
 class App extends Component {
+  handleClick = () => {
+    this.props.history.push({pathname: '/123467'})
+  }
 
   render() {
     return (
@@ -25,16 +28,14 @@ class App extends Component {
                 <li><NavLink exact activeStyle={{color:'#ffa500'}} className={classes.Menu} to="/">Home Route</NavLink></li>
                 <li><NavLink className={classes.Menu} activeStyle={{color:'#ffa500'}} to="/sample_route">Sample Route</NavLink></li>
                 <li><NavLink className={classes.Menu} activeStyle={{color:'#ffa500'}} to="/123">Sample Route with Params</NavLink></li>
-
+                <li><a className={classes.Menu} onClick={this.handleClick}>Navigate onClick</a></li>
               </ul>
             </nav>
           </div>
             {mainRoute}
         </StyleRoot>
     );
-
   }
-
 }
 
-export default Radium(App);
+export default withRouter(Radium(App));
