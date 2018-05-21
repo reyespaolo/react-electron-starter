@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Radium, { StyleRoot } from 'radium';
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import 'primereact/resources/primereact.min.css';
 import 'font-awesome/css/font-awesome.css';
 import 'primereact/resources/themes/cupertino/theme.css';
@@ -13,7 +13,6 @@ import logo from '../assets/logo.svg';
 class App extends Component {
 
   render() {
-
     return (
         <StyleRoot>
           <div className={classes.App}>
@@ -22,16 +21,18 @@ class App extends Component {
               <h1 className="AppTitle">React with CSS Modules</h1>
             </header>
             <nav>
-              <ul>
-                <li><Link to="/">Home Route</Link></li>
-                <li><Link to="/sample_route">Sample Route</Link></li>
+              <ul className={classes.MenuBar}>
+                <li><NavLink exact activeStyle={{color:'#ffa500'}} className={classes.Menu} to="/">Home Route</NavLink></li>
+                <li><NavLink className={classes.Menu} activeStyle={{color:'#ffa500'}} to="/sample_route">Sample Route</NavLink></li>
               </ul>
             </nav>
           </div>
             {mainRoute}
         </StyleRoot>
     );
+
   }
+
 }
 
 export default Radium(App);

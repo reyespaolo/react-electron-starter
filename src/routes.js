@@ -7,7 +7,7 @@ import SampleRoute from './components/SampleRoute/SampleRoute';
 
 const mainRoute =  (
     <div>
-      <Route path="/" exact component={SampleComponent}/>
+      <Route exact path="/" component={SampleComponent}/>
       <Route exact path="/sample_route" component={SampleRoute}/>
     </div>
 );

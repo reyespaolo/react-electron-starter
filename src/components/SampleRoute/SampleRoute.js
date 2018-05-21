@@ -7,6 +7,7 @@ class sampleRoute extends Component{
 
 
   render(){
+
     return(
       <Aux>
         <TabView>
