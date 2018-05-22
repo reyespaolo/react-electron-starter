@@ -1,8 +1,8 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import { routerMiddleware } from 'react-router-redux';
 import persistState from 'redux-localstorage';
-
 import thunk from 'redux-thunk'
+
 import counterReducer from './reducers/counterReducer'
 import resultReducer from './reducers/resultReducer'
 
@@ -18,7 +18,6 @@ export function configureStore(routerHistory) {
     return next => {
       return action => {
         const result = next(action);
-        console.log('Middleware', store.getState())
         return result
       }
     }
