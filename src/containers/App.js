@@ -4,8 +4,7 @@ import { StyleRoot } from 'radium';
 import { withRouter, NavLink } from "react-router-dom";
 import {mainRoute} from '../routes'
 import classes from './App.css';
-import * as actionTypes from '../store/actions/actionTypes'
-
+import { increment,decrement } from '../store/actions/actionTypes';
 import logo from '../assets/logo.svg';
 import 'primereact/resources/primereact.min.css';
 import 'font-awesome/css/font-awesome.css';
@@ -53,8 +52,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onIncrementCounter: () => dispatch({type:actionTypes.INCREMENT}),
-    onDecrementCounter:() => dispatch({type:actionTypes.DECREMENT})
+    onIncrementCounter: () => dispatch(increment()),
+    onDecrementCounter:() => dispatch(decrement())
   }
 }
 
