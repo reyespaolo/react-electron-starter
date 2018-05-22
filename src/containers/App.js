@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import Radium, { StyleRoot } from 'radium';
-import { NavLink } from 'react-router-dom'
+import { withRouter, NavLink } from "react-router-dom";
+import {mainRoute} from '../routes'
+import classes from './App.css';
+
+import logo from '../assets/logo.svg';
 import 'primereact/resources/primereact.min.css';
 import 'font-awesome/css/font-awesome.css';
 import 'primereact/resources/themes/cupertino/theme.css';
-import { withRouter } from "react-router-dom";
-
-import classes from './App.css';
-import {mainRoute} from '../routes'
-import logo from '../assets/logo.svg';
 
 class App extends Component {
   handleClick = () => {

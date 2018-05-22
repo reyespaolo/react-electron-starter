@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 import {Button} from 'primereact/components/button/Button';
 import Aux from '../../hoc/Aux';
-//Functional Components
+
 class sampleComponent extends Component{
 
   constructor(props){
@@ -15,7 +15,6 @@ class sampleComponent extends Component{
   }
 
   render(){
-    console.log(this.props)
     return(
       <Aux>
         <p>Home Compoenent</p>
