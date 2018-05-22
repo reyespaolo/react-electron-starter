@@ -6,13 +6,12 @@ const windowStateKeeper = require('electron-window-state')
 let mainMenu = Menu.buildFromTemplate( require('../electron/mainMenu.js'))
 const mainWindow = require('../electron/mainWindow')
 
-
+global.electron = true;
 
 app.on('ready', (e) => {
   mainWindow.createWindow();
   Menu.setApplicationMenu(mainMenu);
   initializeGlobalShortcut();
-
 })
 
 
