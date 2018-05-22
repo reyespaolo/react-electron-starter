@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import Radium, { StyleRoot } from 'radium';
+import { connect } from 'react-redux';
+import { StyleRoot } from 'radium';
 import { withRouter, NavLink } from "react-router-dom";
 import {mainRoute} from '../routes'
 import classes from './App.css';
+import * as actionTypes from '../store/actions/actionTypes'
 
 import logo from '../assets/logo.svg';
 import 'primereact/resources/primereact.min.css';
@@ -17,6 +19,8 @@ class App extends Component {
   render() {
     return (
         <StyleRoot>
+          Redux Counter State: {this.props.counter}
+
           <div className={classes.App}>
             <header className={classes.AppHeader}>
               <img src={logo} className={classes.AppLogo} alt="logo" />
@@ -28,6 +32,10 @@ class App extends Component {
                 <li><NavLink className={classes.Menu} activeStyle={{color:'#ffa500'}} to="/sample_route">Sample Route</NavLink></li>
                 <li><NavLink className={classes.Menu} activeStyle={{color:'#ffa500'}} to="/123">Sample Route with Params</NavLink></li>
                 <li><a className={classes.Menu} onClick={this.handleClick}>Navigate onClick</a></li>
+                <li><a className={classes.Menu} onClick={this.props.onIncrementCounter}>Counter +</a></li>
+                <li><a className={classes.Menu} onClick={this.props.onDecrementCounter}>Counter -</a></li>
+
+
               </ul>
             </nav>
           </div>
@@ -37,4 +45,17 @@ class App extends Component {
   }
 }
 
-export default withRouter(Radium(App));
+const mapStateToProps = state => {
+  return {
+    counter: state.counter.counter
+  };
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onIncrementCounter: () => dispatch({type:actionTypes.INCREMENT}),
+    onDecrementCounter:() => dispatch({type:actionTypes.DECREMENT})
+  }
+}
+
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(App));

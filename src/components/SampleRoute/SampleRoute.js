@@ -49,7 +49,6 @@ class sampleRoute extends Component{
     updatedFormElement.value = event.target.value;
     updatedSampleForm[inputIdentifier] = updatedFormElement;
     this.setState({sampleForm:updatedSampleForm})
-    console.log(this.state.sampleForm)
   }
 
   render(){
